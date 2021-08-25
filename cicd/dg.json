@@ -1,0 +1,27 @@
+{
+    "applicationName": "001-alex-statlogger-app", 
+    "deploymentGroupName": "001-alex-statlogger-dg", 
+    "deploymentConfigName": "CodeDeployDefault.AllAtOnce", 
+    "serviceRoleArn": "arn:aws:iam::059767637825:role/codedeploy", 
+    "autoRollbackConfiguration": {
+        "enabled": true, 
+        "events": [
+            "DEPLOYMENT_FAILURE"
+        ]
+    }, 
+    "deploymentStyle": {
+        "deploymentType": "IN_PLACE",
+        "deploymentOption": "WITHOUT_TRAFFIC_CONTROL"
+    }, 
+    "ec2TagSet": {
+        "ec2TagSetList": [
+            [
+                {
+                    "Type": "KEY_AND_VALUE",
+                    "Value": "001-alex-statlogger-ec2",
+                    "Key": "Name"
+                }
+            ]
+        ]
+    } 
+}
