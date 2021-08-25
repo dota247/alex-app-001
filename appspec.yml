@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: ./001
+  - source: /
     destination: /home/ec2-user/app
 hooks:
   BeforeInstall:
