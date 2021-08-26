@@ -1,3 +1,3 @@
 #!/bin/bash
-npm start
+npm --prefix /home/ec2-user/app run start
 
