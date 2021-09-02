@@ -1,14 +1,20 @@
 [Unit]
 Description=stat tracker service
 After=network.target
-StartLimitIntervalSec=0
 
 [Service]
+User=ec2-user
 Type=simple
-Restart=always
-RestartSec=1
-User=root
+Environment="NODE_PORT=3000"
+Environment="PORT=3000"
+Environment=CI=true
+RestartSec=10s
+TimeoutSec=900
+RemainAfterExit=true
+StandardOutput=syslog
+StandardError=syslog
 ExecStart=/usr/bin/bash /home/ec2-user/app/scripts/task/start.sh
 
 [Install]
 WantedBy=multi-user.target
+

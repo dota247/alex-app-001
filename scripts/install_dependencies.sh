@@ -4,8 +4,7 @@
 # nodejs 14 setup
 aws s3 cp s3://001-alex-statlogger-s3/mywebapp.zip /home/ec2-user/app/app.zip
 unzip /home/ec2-user/app/app.zip -d /home/ec2-user/app/
-su - ec2-user -c 'cd /home/ec2-user/app && npm install --save /home/ec2-user/app'
-su - ec2-user -c 'cd /home/ec2-user/app && sudo chown ec2-user ./*'
+cd /home/ec2-user/app && npm install --save /home/ec2-user/app
 # service file setup
 sudo chmod +x /home/ec2-user/app/scripts/task/start.sh
 sudo cp /home/ec2-user/app/service/app.service /usr/lib/systemd/system/app.service
